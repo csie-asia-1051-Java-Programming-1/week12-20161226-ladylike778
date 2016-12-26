@@ -6,12 +6,43 @@
  * Date: 2016/12/26
  * Author: 1050210XX 周永振老師
  */
-
+import java.util.*;
 public class ex01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Scanner scn=new Scanner(System.in);
+		int n=scn.nextInt();
+		int data[]=new int[n];
+		for(int i=0;i<n;i++){
+			data[i]=scn.nextInt();
+		}
+		int a;
+		for(int i=0;i<n;i++){
+			for(int j=i+1;j<n;j++){
+			 if(a(data[i])==a(data[j])){
+				if(data[i]>data[j]){
+					a=data[i];
+					data[i]=data[j];
+					data[j]=a;	
+				}
+			}else if(a(data[i])>a(data[j])){
+				a=data[i];
+				data[i]=data[j];
+				data[j]=a;				
+			}
+		}
+		}
+		for(int i=0;i<n;i++){
+			System.out.print(data[i]+" ");
+		}
+	}
+	public static int a(int a){
+		int sum=0;
+		for(int i=0;i<String.valueOf(a).length();i++){
+			sum=sum+a%10;
+			a=a/10;
+		}return sum;		
 	}
 
 }
